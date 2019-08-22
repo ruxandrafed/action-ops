@@ -3,8 +3,8 @@ const github = require('@actions/github');
 
 async function run() {
   try {
-    const myInput = core.getInput('myInput');
-    core.debug(`Hello ${myInput} from inside a container`);
+    const name = core.getInput('name');
+    core.debug(`Hello ${name} from inside a container`);
 
     // Get github context data
     const context = github.context;
