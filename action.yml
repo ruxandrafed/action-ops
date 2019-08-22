@@ -1,10 +1,13 @@
-name: 'Github Action Docker example'
-description: 'Example GitHub action using Docker'
-author: '@ruxandrafed'
-inputs: 
-  name:
-    description: 'Your name'
-    default: 'banana'
+name: "Github Action for CTO.ai ops CLI"
+description: "Wraps the ops CLI to enable common ops commands."
+author: "@ruxandrafed"
+inputs:
+  args:
+    description: "Commands for the ops CLI"
+    default: "whoami"
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "docker"
+  image: "Dockerfile"
+branding:
+  icon: "terminal"
+  color: "blue"

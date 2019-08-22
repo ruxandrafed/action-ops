@@ -1,7 +1,14 @@
-FROM node:slim
+FROM node:alpine
 
-COPY . .
+LABEL "name"="CTO.ai Ops CLI Action"
+LABEL "maintainer"="Ruxandra Fediuc <ruxandra.fediuc@gmail.com>"
+LABEL "version"="1.0.0"
 
-RUN npm install --production
+COPY LICENSE README.md /
+COPY entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT ["node", "/lib/main.js"]
+RUN npm -g config set user root
+
+RUN npm install -g @cto.ai/ops
+
+ENTRYPOINT ["/entrypoint.sh"]
