@@ -6,6 +6,8 @@ async function run() {
     const name = core.getInput('name');
     core.debug(`Hello ${name} from inside a container`);
 
+    console.log(`😃 Hello ${name}`);
+
     // Get github context data
     const context = github.context;
     console.log(`We can even get context data, like the repo: ${context.repo.repo}`)
